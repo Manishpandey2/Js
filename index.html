@@ -13,12 +13,14 @@
   <input type="file" id="fileinput" multiple>
   <p id="output">what you enter see here</p>
   <img alt="preview" id="preview">
+  <button id="remove">Remove</button>
+  
 
   <script>
     const fileInput = document.getElementById('fileinput');
     const output = document.getElementById('output');
     const preview = document.getElementById('preview');
-    
+    const remove = document.getElementById('remove');
     fileInput.addEventListener('change', function(){
       console.log("this", this)
       console.log("this files", this.files)
@@ -32,6 +34,11 @@
       }else{
         console.log('no file selected');
       }
+    })
+    remove.addEventListener('click', ()=>{
+      fileInput.value = '';
+      output.innerText = '';
+      preview.src = '';
     })
   </script>
 </body>
