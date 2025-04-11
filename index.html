@@ -1,0 +1,30 @@
+// this in eventhandler, file files
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>fill the required field</h1>
+  <label for="fileinput">Select image</label>
+  <input type="file" id="fileinput" multiple>
+
+  <script>
+    const fileInput = document.getElementById('fileinput');
+    fileInput.addEventListener('change', function(){
+      console.log("this", this)
+      console.log("this files", this.files)
+      // console.log("fourth filename", this.files[3].name);
+      if(this.files.length > 0){
+        const file = this.files[0];
+        console.log(file.size,file.name,file.type);
+      }else{
+        console.log('no file selected');
+      }
+    })
+  </script>
+</body>
+</html>
